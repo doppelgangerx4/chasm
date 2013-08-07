@@ -19,7 +19,7 @@ function Update ()
 //gameObject.GetComponent(ParticleSystem).enabled = true;
 if(this.isMouseOver == true && Input.GetMouseButtonDown(0))
 	{
-	PlayerScript.jumpTo(mySelf);
+	PlayerScript.jumpTo(mySelf.transform);
 	
 //	iTween.MoveBy(player, iTween.Hash("y", lobHeight, "time", lobTime/2, "easeType", iTween.EaseType.easeOutQuad));
 //	iTween.MoveBy(player, iTween.Hash("y", -lobHeight, "time", lobTime/2, "delay", lobTime/2, "easeType", iTween.EaseType.easeInCubic));     
