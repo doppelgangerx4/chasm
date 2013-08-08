@@ -8,13 +8,15 @@ public class JumpTo : MonoBehaviour {
 	
 	public bool isMouseOver = false; //is mouse over? (sometimes you don't need a comment I guess!)
 	public GameObject mySelf;
+	private Color nativeLightColor;
 	
 	
 	// Use this for initialization
 	void Start () {
 		mySelf = this.gameObject;
 		player = GameObject.FindWithTag("Player");
-		playerScript = player.GetComponentInChildren<PlayerScript>();		
+		playerScript = player.GetComponentInChildren<PlayerScript>();
+		nativeLightColor = light.color;
 	}
 	
 	// Update is called once per frame
@@ -28,13 +30,15 @@ public class JumpTo : MonoBehaviour {
 	
 	void OnMouseEnter () {
 //mySelf.light.enabled = true;
-		this.light.enabled = true;
+		light.color = Color.red;
+		//light.enabled = true;
 isMouseOver = true;
 		}
 
 void OnMouseExit () {
 //mySelf.light.enabled = false;
-		this.light.enabled = true;
+		//this.light.enabled = true;
+		light.color = nativeLightColor;
 isMouseOver = false;
 
 }
