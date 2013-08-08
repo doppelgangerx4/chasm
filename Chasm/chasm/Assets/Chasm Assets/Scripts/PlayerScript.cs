@@ -35,11 +35,16 @@ public class PlayerScript : MonoBehaviour {
 	
 	public void JumpTo(Transform target)
 	{
-	
-		jumpTarget = target;
-		isJumping = true;
-		Debug.Log(jumpTarget.position);
-					
+	if (target == null)
+		{
+			Debug.Log("Invalid target");
+		}
+		else
+		{
+			jumpTarget = target;
+			isJumping = true;
+			Debug.Log(jumpTarget.position);
+		}			
 	}//jumpTo()
 	
 	
