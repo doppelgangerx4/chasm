@@ -15,7 +15,7 @@ public GameObject mySelf;
 	// Use this for initialization
 	void Start () {
 		mySelf = this.gameObject;
-	playerScript = player.GetComponent<PlayerScript>();
+		playerScript = player.GetComponent<PlayerScript>();
 		
 	}
 	
@@ -25,7 +25,7 @@ public GameObject mySelf;
 		if(isMouseOver == true && Input.GetMouseButtonDown(0)) //if player clicks on me
 			{
 
-			playerScript.JumpTo(gameObject.transform); //call the player's JumpTo() to make them jump to me
+			playerScript.JumpTo(ref mySelf); //call the player's JumpTo() to make them jump to me
 	
 			}
 	

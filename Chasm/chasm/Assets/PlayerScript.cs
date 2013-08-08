@@ -8,9 +8,9 @@ public class PlayerScript : MonoBehaviour {
 	public float stuckTimeMax = 2; //how long are we allowed to stay stuck? (in seconds)
 	public bool isJumping = false; //are we jumping to a new place?
 	public bool isHooking = false; //have we thrown our hook?
-	public Transform jumpTarget; //where are we jumping to?
+	public GameObject jumpTarget; //where are we jumping to?
 	public GameObject hookTarget; //where are we hooking to?	
-	public Transform playerTransform; //my transform
+	public GameObject player; //me
 		
 		
 	// Use this for initialization
@@ -25,20 +25,20 @@ public class PlayerScript : MonoBehaviour {
 		
 		{
 		
-		Debug.Log(jumpTarget.transform.position);
+	//	Debug.Log(jumpTarget.transform.position);
 	
-		playerTransform.position = Vector3.MoveTowards(playerTransform.position,jumpTarget.position, (100*Time.deltaTime));
+		player.transform.position = Vector3.MoveTowards(player.transform.position,jumpTarget.transform.position, (10*Time.deltaTime));
 	
 		}
 			
 	}
 	
-	public void JumpTo(Transform target)
+	public void JumpTo(ref GameObject target)
 	{
 	
 		jumpTarget = target;
 		isJumping = true;
-		Debug.Log(jumpTarget.position);
+		Debug.Log(jumpTarget.transform.position);
 					
 	}//jumpTo()
 	
