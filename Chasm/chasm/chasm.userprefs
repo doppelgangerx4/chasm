@@ -1,18 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench />
-=======
-=======
->>>>>>> d3cfa2b8f1050f0b91a8e3c94165c971af0806cd
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Chasm Assets/Scripts/PlayerScript.cs">
     <Files>
-      <File FileName="Assets\PlayerScript.cs" Line="30" Column="111" />
-      <File FileName="Assets\JumpTo.cs" Line="18" Column="52" />
+      <File FileName="Assets/Chasm Assets/Scripts/JumpTo.cs" Line="7" Column="9" />
+      <File FileName="Assets/Chasm Assets/Scripts/PlayerScript.cs" Line="45" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
->>>>>>> d3cfa2b8f1050f0b91a8e3c94165c971af0806cd
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

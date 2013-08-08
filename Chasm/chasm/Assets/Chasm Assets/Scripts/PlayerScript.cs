@@ -10,12 +10,12 @@ public class PlayerScript : MonoBehaviour {
 	public bool isHooking = false; //have we thrown our hook?
 	public GameObject jumpTarget; //where are we jumping to?
 	public GameObject hookTarget; //where are we hooking to?	
-	public GameObject player; //me
+	public OVRPlayerController player; //me
 		
 		
 	// Use this for initialization
 	void Start () {
-	isJumping = false;
+		isJumping = false;
 	}
 	
 	// Update is called once per frame
@@ -35,24 +35,9 @@ public class PlayerScript : MonoBehaviour {
 	
 	public void JumpTo(ref GameObject target)
 	{
-<<<<<<< HEAD:Chasm/chasm/Assets/Chasm Assets/Scripts/PlayerScript.cs
-	if (target == null)
-		{
-			Debug.Log("Invalid target");
-		}
-		else
-		{
-			jumpTarget = target;
-			isJumping = true;
-			Debug.Log(jumpTarget.position);
-		}			
-=======
-	
 		jumpTarget = target;
 		isJumping = true;
-		Debug.Log(jumpTarget.transform.position);
-					
->>>>>>> d3cfa2b8f1050f0b91a8e3c94165c971af0806cd:Chasm/chasm/Assets/PlayerScript.cs
+		Debug.Log(jumpTarget.transform.position);					
 	}//jumpTo()
 	
 	
