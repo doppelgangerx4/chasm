@@ -3,9 +3,11 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
-	public bool isStuck; //are we stuck to something?
+	public bool isStuck = false; //are we stuck to something?
+	public bool isFalling = false;
 	public float stuckStart = 0; //when did we start sticking?
-	public float stuckTimeMax = 2; //how long are we allowed to stay stuck? (in seconds)
+	public float stuckTimeMax = 5; //how long are we allowed to stay stuck? (in seconds)
+	
 	public bool isJumping = false; //are we jumping to a new place?
 	public bool isHooking = false; //have we thrown our hook?
 	public GameObject jumpTarget; //where are we jumping to?
@@ -20,16 +22,26 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	Debug.Log(Time.time);
 		if(isJumping == true) //if we're jumping somewhere, move us to it each tick
-		
+
 		{
-		
-	//	Debug.Log(jumpTarget.transform.position);
-	
 		player.transform.position = Vector3.MoveTowards(player.transform.position,jumpTarget.transform.position, (10*Time.deltaTime));
-	
 		}
+		
+		if( (player.transform.position == jumpTarget.transform.position) && isJumping ){ // we made it!
+			isJumping = false;
+			isStuck = true;
+			stuckStart = Time.time;
+			}
+		
+		if(isStuck && ((stuckStart + stuckTimeMax) < Time.time)){ //oh no i'm falling
+			isFalling = true;
+			}
+		
+		if (isFalling){
+			player.transform.position += Vector3.down;
+			}
 			
 	}
 	
@@ -41,5 +53,16 @@ public class PlayerScript : MonoBehaviour {
 	}//jumpTo()
 	
 	
+	public void OnControllerColliderHit(ControllerColliderHit hit)
+{
+//Respond to collision
+Debug.Log("test");
+}
+	
+		public void OnCollisionEnter (Collision col)
+		{
+		//Respond to collision
+		Debug.Log("test");
+		}
 	
 }
