@@ -13,7 +13,8 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject jumpTarget; //where are we jumping to?
 	public GameObject hookTarget; //where are we hooking to?	
 	public OVRPlayerController player; //me
-		
+	
+	
 		
 	// Use this for initialization
 	void Start () {
@@ -45,11 +46,12 @@ public class PlayerScript : MonoBehaviour {
 			
 	}
 	
-	public void JumpTo(ref GameObject target)
+	public void JumpTo(ref GameObject target, float rockStuckTime)
 	{
 		jumpTarget = target;
 		isJumping = true;
-		Debug.Log(jumpTarget.transform.position);					
+		Debug.Log(jumpTarget.transform.position);
+		stuckTimeMax = rockStuckTime;
 	}//jumpTo()
 	
 	
